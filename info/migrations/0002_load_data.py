@@ -7,7 +7,7 @@ def load_data(apps, schema_editor):
 
     try:
         Mineral = apps.get_model('info', 'Mineral')
-        with open('info/info.json', encoding='utf8') as file:
+        with open('static/data/minerals.json', encoding='utf8') as file:
             minerals = json.load(file)
             for mineral in minerals:
                 Mineral(
@@ -34,6 +34,9 @@ def load_data(apps, schema_editor):
 
     except LookupError:
         # The old app isn't installed.
+        return
+    except FileNotFoundError:
+        print("That file does not exist.")
         return
     # Now this is where we write the logic to read your minerals.json file in.
     # Then load it from JSON into your Mineral model so it saves them to Database.
