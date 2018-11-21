@@ -4,9 +4,6 @@ from django.shortcuts import render, get_object_or_404
 
 from info.models import Mineral
 
-def index(request):
-    return HttpResponse("<h1>This is the minerals page</h1>")
-
 def home(request):
     mineral_list = Mineral.objects.all()
     context = {

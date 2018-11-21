@@ -1,17 +1,45 @@
 {% extends "minerals/layout.html" %}
+
 {% load static %}
-{% load static from staticfiles %}
 
 
 {% block content %}
   <div class="grid-100 mineral__container">
     <h1 class="mineral__name">{{ mineral.name }}</h1>
     <div class="mineral__image-bg">
-      <img class="mineral__image" src="{% get_static_prefix %}images/{{ mineral.name}}.jpg">
-      <p class="mineral__caption">{{ mineral.image_caption }}</p>
+      <img class="mineral__image" src="{% static 'images' %}/{{mineral.name}}.jpg" alt="{{ mineral.name|title }}">
+      <p class="mineral__caption">{{ mineral.image_caption|title }}</p>
     </div>
     <div class="mineral__table-container">
       <table class="mineral__table">
+        <tr>
+          <td class="mineral__category">Category</td>
+          <td>{{ mineral.category|title }}</td>
+        </tr>
+        <tr>
+          <td class="mineral__category">Formula</td>
+          <td class="mineral__formula">{{ mineral.formula|safe }}</td>
+        </tr>
+        <tr>
+          <td class="mineral__category">Strunz Classification</td>
+          <td>{{ mineral.strunz_classification|title }}</td>
+        </tr>
+        <tr>
+          <td class="mineral__category">Unit Cell</td>
+          <td>{{ mineral.unit_cell|title }}</td>
+        </tr>
+        <tr>
+          <td class="mineral__category">Color</td>
+          <td>{{ mineral.color|title }}</td>
+        </tr>
+        <tr>
+          <td class="mineral__category">Crystal Habit</td>
+          <td>{{ mineral.crystal_habit|title }}</td>
+        </tr>
+        <tr>
+          <td class="mineral__category">Mohs Scale Hardness</td>
+          <td>{{ mineral.mohs_scale_hardness|title }}</td>
+        </tr>
       </table>
     </div>
   </div>
