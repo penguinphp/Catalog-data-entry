@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 from .models import Mineral
 
@@ -42,5 +42,21 @@ class MineralViewTests(TestCase):
         )
 
     def test_home_view(self):
-        resp = self.client.get(reverse('minerals:list'))
+        resp = self.client.get(reverse('home'))
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(self.mineral1, resp.context['mineral_list'])
+        self.assertIn(self.mineral2, resp.context['mineral_list'])
+        self.assertTemplateUsed(resp, 'minerals/index.html')
+        self.assertContains(resp, self.mineral1.name)
+        self.assertContains(resp, self.mineral2.name)
+
+    def test_detail_view(self):
+        resp = self.client.get(reverse('detail',
+                                       kwargs={'pk': self.mineral2.pk}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(self.mineral2, resp.context['mineral'])
+        self.assertTemplateUsed(resp, 'minerals/detail.html')
+        self.assertContains(resp, self.mineral2.name)
+        self.assertContains(resp, self.mineral2.color)
+        self.assertContains(resp, self.mineral2.image_caption)
 
