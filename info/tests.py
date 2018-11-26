@@ -4,6 +4,7 @@ from django.urls import reverse
 from .models import Mineral
 
 class TestMineral(TestCase):
+    """Test Model"""
     def test_mineral(self):
         mineral = Mineral.objects.create(
             name="Andesite",
@@ -42,6 +43,7 @@ class MineralViewTests(TestCase):
         )
 
     def test_home_view(self):
+        """Tests home view"""
         resp = self.client.get(reverse('home'))
         self.assertEqual(resp.status_code, 200)
         self.assertIn(self.mineral1, resp.context['mineral_list'])
@@ -51,6 +53,7 @@ class MineralViewTests(TestCase):
         self.assertContains(resp, self.mineral2.name)
 
     def test_detail_view(self):
+        """Tests detail view"""
         resp = self.client.get(reverse('detail',
                                        kwargs={'pk': self.mineral2.pk}))
         self.assertEqual(resp.status_code, 200)
