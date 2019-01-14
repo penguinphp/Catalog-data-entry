@@ -13,6 +13,17 @@
     <link href="{% static 'css/global.css' %}" rel='stylesheet' type='text/css'>
 </head>
 <body>
+    <div class="bounds">
+        <p class='grid-100'>Search by Group</p>
+    <ul>
+        {% for group in groups %}
+          <li {% if group_name == group %} style="font-weight:bolder;" {% endif %}>
+              {% if group %} <a href="{% url 'group' group_name=group %}">{{ group }}</a></li>{% endif %}
+     {% endfor %}
+    </ul>
+  </div>
+
+
 <div class="bounds">
     <div class="grid-100">
             <svg class="logo" viewBox="0 0 127.6 84.8" preserveAspectRation="xMinYMin meet">
@@ -23,6 +34,7 @@
             <h1 class="logo__name text-centered"> Macky's Minerals</h1>
         </a>
         <p class="logo__text text-centered">They're not rocks!</p>
+
     </div>
     {% block content %}
     {% endblock content %}
