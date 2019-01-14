@@ -20,7 +20,7 @@ def home(request):
 def detail(request, pk):
     mineral = get_object_or_404(Mineral, pk=pk)
     return render(request, 'minerals/detail.html', {'mineral': mineral})
-<<<<<<< HEAD
+
 
 
 def search_by_group(request, group_name):
@@ -38,5 +38,4 @@ def search_by_group(request, group_name):
 
 
 
-=======
->>>>>>> 9abb7a0e56ecbf12349adc4a5bf617d97e164dfe
+
