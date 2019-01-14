@@ -62,4 +62,3 @@ class MineralViewTests(TestCase):
         self.assertContains(resp, self.mineral2.name)
         self.assertContains(resp, self.mineral2.color)
         self.assertContains(resp, self.mineral2.image_caption)
-
