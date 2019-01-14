@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/templates/minerals/index.html" line="6" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60ec48dc-fb17-44c8-bc4c-c0cec93c1198" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/info/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/info/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/info/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mineralcat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mineralcat/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/minerals/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/minerals/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/minerals/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/minerals/layout.html" afterDir="false" />
-    </list>
+    <list default="true" id="60ec48dc-fb17-44c8-bc4c-c0cec93c1198" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
