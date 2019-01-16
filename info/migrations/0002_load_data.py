@@ -30,6 +30,7 @@ def load_data(apps, schema_editor):
                     refractive_index=mineral.get('refractive index', ''),
                     crystal_habit=mineral.get('crystal habit', ''),
                     specific_gravity=mineral.get('specific gravity', ''),
+                    group=mineral.get('group', ''),
                 ).save()
 
     except LookupError:

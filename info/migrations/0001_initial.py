@@ -34,6 +34,8 @@ class Migration(migrations.Migration):
                 ('refractive_index', models.CharField(max_length=200)),
                 ('crystal_habit', models.CharField(max_length=200)),
                 ('specific_gravity', models.CharField(max_length=200)),
+                # add group in initial migrations
+                ('group', models.CharField(max_length=200, blank=True, default='')),
             ],
         ),
     ]

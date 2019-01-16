@@ -1,18 +1,17 @@
 {% extends 'minerals/layout.html' %}
-
 {% block content %}
 
-<p class="text-centered">There are {{ mineral_list|length }} minerals</p>
+<p class="text-centered">There are {{ minerals|length }} minerals </p>
+
     <div class="grid-100">
         <ul class="minerals__container">
 
-            {% for mineral in mineral_list %}
+            {% for mineral in minerals %}
             <li class="minerals__item">
                 <a class="minerals__anchor" href="{% url 'detail' pk=mineral.pk %}"> {{ mineral.name }}</a>
             </li>
             {% endfor %}
         </ul>
     </div>
-
 
 {% endblock %}

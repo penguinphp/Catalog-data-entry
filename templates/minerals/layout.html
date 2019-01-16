@@ -12,17 +12,6 @@
     {% block static %}
     <link href="{% static 'css/global.css' %}" rel='stylesheet' type='text/css'>
 </head>
-<body>
-    <div class="bounds">
-        <p class='grid-100'>Search by Group</p>
-    <ul>
-        {% for group in groups %}
-          <li {% if group_name == group %} style="font-weight:bolder;" {% endif %}>
-              {% if group %} <a href="{% url 'group' group_name=group %}">{{ group }}</a></li>{% endif %}
-     {% endfor %}
-    </ul>
-  </div>
-
 
 <div class="bounds">
     <div class="grid-100">
@@ -31,14 +20,47 @@
                 <polygon class="logo--middle" points="52.9,79.5 52.9,79.5 84.8,80.1 59.7,35 43.3,62.4 "/>
                 <polygon points="127.6,61.4 127.6,61.4 110.3,13.5 110.3,13.5 70.3,48.1 70.3,48.1 88.3,80.5 95.3,81.4 95.3,81.4 "/>
             </svg>
-            <h1 class="logo__name text-centered"> Macky's Minerals</h1>
+            <h1 class="logo__name text-centered"> Minerals</h1>
         </a>
-        <p class="logo__text text-centered">They're not rocks!</p>
+        <p class="logo__text text-centered">not rocks!</p>
 
     </div>
+    <body>
+    <div class="left__nav">
+        <p class='grid-100'>Search by Group</p>
+    <ul>
+        {% for group in groups %}
+          <li {% if group_name == group %} style="font-weight:bolder;" {% endif %}>
+              {% if group %} <a href="{% url 'group' group_name=group %}">{{ group }}</a></li>{% endif %}
+     {% endfor %}
+    </ul>
+    </div>
+    <div class="left__nav">
+        <p class='grid-100'>Search by letter</p>
+            {% for character in alphabet %}
+             <span class="browse__text"{% if character == letter %} style="font-weight: bolder;"{% endif %}>
+            {% if character %} <a href="{% url 'letter' letter=character %}">{{ character }}</a> {% endif %}
+            </span>
+            {% endfor %}
+    </div>
+    <ul>
+    </ul>
+      <div class="left__nav">
+    <p class="grid-100">Search: </p>
+    <form action="{% url 'keyword' %}" method="GET">
+		  <ul>
+			  <input type="search" name="q">
+			  <input type="submit" value="Search">
+		  </ul>
+	  </form>
+  </div>
+
+    <ul>
+    </ul>
     {% block content %}
     {% endblock content %}
     </div>
+  </div>
 </body>
 {% endblock static %}
 </html>
