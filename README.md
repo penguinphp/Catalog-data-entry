@@ -14,12 +14,11 @@
 >-Clicking on the link displays all of the minerals that start with that letter in the list.<br />
 >-The links work from any page in the site.<br />
 >-The selected letter is bolded.<br />
->-Add search box to search by keyword, list of groups when clicked on display minerals in that group, allow users to search by first letter of mineral.<br />
 >-Searching can be performed from any page on the site.<br />
 >-Clicking on a group displays in the list all of the minerals in the selected group.<br />
 >-The selected group is bolded.<br />
 >-The appropriate methods are used to optimally query the database in less than 10ms.<br />
 >-There are unit tests for all the views, models, and other functions. The tests cover a reasonable amount of the code (50-80%).<br />
 >-The pages produced roughly match those in the example files.<br />
-
+>-The code is clean, readable, and well organized. It complies with most common PEP 8 standards of style.<br />
 
