@@ -74,6 +74,3 @@ def search_by_keyword(request):
         'minerals': minerals
     })
 
-
-
-
