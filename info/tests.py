@@ -62,3 +62,21 @@ class MineralViewTests(TestCase):
         self.assertContains(resp, self.mineral2.name)
         self.assertContains(resp, self.mineral2.color)
         self.assertContains(resp, self.mineral2.image_caption)
+
+    def test_search_by_group(self):
+        resp = self.client.get(reverse('group', kwargs={'group_name': 'Silicates'}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertNotIn(self.mineral1, resp.context['groups'])
+        self.assertTemplateUsed(resp, 'minerals/groups.html')
+
+    def test_search_by_letter(self):
+        resp = self.client.get(reverse('letter', kwargs={'letter': 'A'}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(self.mineral1, resp.context['minerals'])
+        self.assertTemplateUsed(resp, 'minerals/letter.html')
+
+    def test_search_by_keyword(self):
+        resp = self.client.get(reverse('keyword'), {'keyword': 'site'})
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(self.mineral1, resp.context['minerals'])
+        self.assertTemplateUsed(resp, 'minerals/search.html')
