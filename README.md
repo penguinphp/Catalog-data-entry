@@ -1,3 +1,5 @@
+## Mineral Catalog
+
 **Instructions** <br />
 >-The site retrieves its data from a SQLite database.<br />
 >-The layout template contains a name for the website.<br />
